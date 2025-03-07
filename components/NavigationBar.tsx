@@ -8,6 +8,7 @@ import axios from "axios";
 import { Button } from "./ui/button";
 import { apiEndpoints } from "@/app/api/api";
 import GetNavbarById from '@/components/Navbar/page';
+import GetTitleById from "./Title/page";
 
 
 interface ContentNavbarGeneral {
@@ -140,7 +141,7 @@ export default function NavigationBar() {
           ]?.map((item, index) => (
             <div
               key={index}
-              className={`cursor-pointer font-medium transition-colors flex items-center ${activeDropdown === index ? "text-green-500" : "text-gray-800"
+              className={`cursor-pointer font-medium transition-colors flex items-center ${activeDropdown === index ? "text-black" : "text-gray-800"
                 }`}
               onClick={() => toggleDropdown(index)}
             >
@@ -225,26 +226,26 @@ export default function NavigationBar() {
       {isMenuOpen && (
         <div className="lg:hidden flex flex-col bg-white p-4 rounded-lg shadow-lg pt-20 fixed top-0 left-0 w-full ">
           <button onClick={handleProductClick} className="text-start text-md font-medium py-2 rounded-md">
-            Produk
+            <GetNavbarById id={1} />
           </button>
           <div className="border-t-2 border-gray-100 my-2"></div>
 
           <Link href="/client/customer" className="text-[17px] font-medium py-2  rounded-md">
-            Pelanggan
+            <GetNavbarById id={2} />
           </Link>
 
           <div className="border-t-2 border-gray-100 my-2"></div>
 
           {/* Perusahaan - Dropdown */}
           <div className="mt-2">
-            <button onClick={() => setDropdownOpen(!dropdownOpen)} className="text-[17px] font-medium flex items-center ">
-              Perusahaan
-              <ChevronDown size={16} className={`transition-transform duration-300 ${dropdownOpen ? "rotate-180" : "rotate-0"}`}/>
+            <button onClick={() => setDropdownOpen(!dropdownOpen)} className="text-[17px] font-medium flex  text-center">
+              <GetNavbarById id={3} />
+              <ChevronDown size={16} className={`transition-transform duration-300 ${dropdownOpen ? "rotate-180" : "rotate-0"}`} />
             </button>
 
             <div className="border-t-2 border-gray-100 my-2"></div>
             {dropdownOpen && (
-              <div className="mt-2 mr-10 bg-white rounded-md text-[10px]">
+              <div className="mt-2 bg-white rounded-md text-[10px] text-gray-600">
                 <ListItem title="Tentang Kami" href="/client/aboutUs" />
                 <ListItem title="Tim Kami" href="/client/company" />
                 <ListItem title="Press" href="/client/press" />
@@ -254,7 +255,7 @@ export default function NavigationBar() {
             )}
           </div>
           <div className="flex items-end mt-2">
-            <button className="text-[#db5757] font-bold rounded-lg text-base cursor-pointer hover:text-[#39793c]">Daftar</button>
+            <button className="text-[#db5757] font-bold rounded-lg text-base cursor-pointer hover:text-black">Daftar</button>
           </div>
         </div>
       )}
@@ -264,7 +265,7 @@ export default function NavigationBar() {
 
 // Component untuk item dalam dropdown
 const ListItem = ({ href, title }: { href: string; title: string }) => (
-  <Link href={href} className="block text-[15px] py-1 hover:text-green-600">
+  <Link href={href} className="block text-[15px] py-1 hover:bg-gray-100 px-2">
     {title}
   </Link>
 );
