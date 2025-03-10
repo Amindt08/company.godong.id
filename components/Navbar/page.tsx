@@ -31,7 +31,7 @@ const GetNavbarById: React.FC<Props> = ({ id }) => {
     };
 
     if (!data) {
-        return <div className="card text-center">
+        return <div className="card ">
             <ProgressSpinner style={{ width: '10px', height: '10px' }} strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s" />
         </div>
     }

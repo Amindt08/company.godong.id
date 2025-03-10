@@ -10,6 +10,7 @@ import DeskripsiDetail from "@/components/DeskripsiDetail";
 // import ImageFetcher from "@/components/ImageFetcher";
 import GetTitleById from '@/components/Title/page';
 import GetDeskripsiById from '@/components/Deskripsi/page';
+import GetImageById from '@/components/Image/page';
 
 
 
@@ -141,7 +142,7 @@ export default function Landing() {
     }
 
     return (
-        <div className='font-poppins h-full'>
+        <div className='font-poppins h-full bg-white'>
             <div className='grid md:grid-cols-2 grid-cols-1 items-center px-4 lg:px-16 py-8 lg:py-20 mb-10 '>
                 <div className='mt-20'>
                     <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-bold text-[#1A1A1A] leading-tight'>
@@ -155,12 +156,8 @@ export default function Landing() {
                         <CircleArrowRight />
                     </button>
                 </div>
-                <div className='hidden justify-end sm:flex'>
-                    <img
-                        src="/landingpage.png"
-                        alt="Puzzle Team Illustration"
-                        className='w-[100%] h-[100%]'
-                    />
+                <div className='hidden justify-center sm:flex'>
+                    <GetImageById id={2}/>
                 </div>
             </div>
 
@@ -213,7 +210,7 @@ export default function Landing() {
                         <div key={index} className="bg-white p-4 rounded-lg text-center shadow-md">
                             <img src={product.img} alt={product.name} className="mx-auto mb-4" />
                             <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                            <p className="text-gray-600 mb-4">
+                            <p className="text-gray-600 ">
                                 Dengan keahlian dalam bidangnya dan kecanggihan teknologi, Godong Laku adalah...
                             </p>
                             {product.link ? (

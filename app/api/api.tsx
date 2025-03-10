@@ -13,7 +13,8 @@ export const apiEndpoints = {
   GETNAVBAR: `${api_url}/getNavbar`, // GET semua data
 
   //Gambar
-  GETGAMBAR: `${api_url}/getGambar`, // GET semua data
+  GETIMAGEBYID: (id: string) => `${api_url}/getImageById/${id}`, // GET data berdasarkan ID
+  GETIMAGE: `${api_url}/getImage`, // GET semua data
 
   //Judul
   GETTITLE: `${api_url}/getTitle`, // GET semua data
