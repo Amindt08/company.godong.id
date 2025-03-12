@@ -8,17 +8,14 @@ import Link from 'next/link';
 import Side from '@/components/side'
 import DeskripsiDetail from "@/components/DeskripsiDetail";
 // import ImageFetcher from "@/components/ImageFetcher";
-import GetTitleById from '@/components/Title/page';
-import GetDeskripsiById from '@/components/Deskripsi/page';
-import GetImageById from '@/components/Image/page';
+import GetTitleById from '@/components/CMS_Landing/Title/page';
+import GetDeskripsiById from '@/components/CMS_Landing/Deskripsi/page';
+import GetImageById from '@/components/CMS_Landing/Image/page';
 
 
 
 export default function Landing() {
-    const title = "Solusi Akutansi Terbaik untuk Bisnis Anda"
-    const description = "Optimalkan keuangan bisnismu dengan Godong Software, mudah menyusun laporan, memonitor transaksi, dan menganalisis kinerja."
     const buttonText = "Try Godong Free"
-    const description3 = "Kami menghadirkan berbagai solusi perangkat lunak yang komprehensif dan mudah digunakan untuk memenuhi berbagai kebutuhan bisnis Anda. Berikut adalah beberapa produk unggulan kami:"
 
     const BusinessServiceCard = ({ title, description }: any) => {
         return (
@@ -146,10 +143,10 @@ export default function Landing() {
             <div className='grid md:grid-cols-2 grid-cols-1 items-center px-4 lg:px-16 py-8 lg:py-20 mb-10 '>
                 <div className='mt-20'>
                     <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-bold text-[#1A1A1A] leading-tight'>
-                        <GetTitleById id={1}/>
+                        <GetTitleById id={1} />
                     </h1>
                     <p className='text-gray-600 mt-4 text-lg text-justify'>
-                        <GetDeskripsiById id={1}/>
+                        <GetDeskripsiById id={1} />
                     </p>
                     <button className='mt-8 bg-[#366938] text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2'>
                         {buttonText}
@@ -157,13 +154,13 @@ export default function Landing() {
                     </button>
                 </div>
                 <div className='hidden justify-center sm:flex'>
-                    <GetImageById id={2}/>
+                    <GetImageById id={2} />
                 </div>
             </div>
 
 
             <div className='bg-gradient-to-b from-white via-[#D4E2D2] to-white'>
-                <h2 className='text-2xl lg:text-4xl font-bold mb-8 text-center mx-4'><GetTitleById id={3}/></h2>
+                <h2 className='text-2xl lg:text-4xl font-bold mb-8 text-center mx-4'><GetTitleById id={2} /></h2>
                 <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:px-16 text-center' style={{ scrollbarWidth: 'none' }}>
                     <BusinessServiceCard title="Ritel Coffee Shop" description="Penjelasan" />
                     <BusinessServiceCard title="Ritel Restoran" description="Penjelasan" />
@@ -173,9 +170,9 @@ export default function Landing() {
                 </div>
 
                 <div className='mt-16 mx-4 text-center'>
-                    <h2 className='text-2xl md:text-5xl font-bold mb-4'><GetTitleById id={2}/></h2>
+                    <h2 className='text-2xl md:text-5xl font-bold mb-4'><GetTitleById id={3} /></h2>
                     <p className='text-gray-600 px-4 mx-auto leading-relaxed text-justify md:text-center'>
-                    <GetDeskripsiById id={4}/>
+                        <GetDeskripsiById id={2} />
                     </p>
                 </div>
                 <div className='flex justify-center mt-8'>
@@ -187,7 +184,7 @@ export default function Landing() {
             </div>
 
             <div className='bg-white py-16'>
-                <h2 className='text-center text-2xl md:text-4xl font-bold mb-8'><GetTitleById id={4}/></h2>
+                <h2 className='text-center text-2xl md:text-4xl font-bold mb-8'><GetTitleById id={4} /></h2>
                 <div
                     className="flex flex-wrap justify-center gap-4 lg:px-16 items-center"
                     style={{ scrollbarWidth: 'none' }}
@@ -200,27 +197,27 @@ export default function Landing() {
                 </div>
 
 
-                <h2 className='text-center text-2xl md:text-4xl font-bold mb-4 mt-20 mx-4'><GetTitleById id={5}/></h2>
+                <h2 className='text-center text-2xl md:text-4xl font-bold mb-4 mt-20 mx-4'><GetTitleById id={5} /></h2>
                 <p className='text-justify md:text-center text-xl text-gray-600 mb-12 mx-4 md:mx-20 md:px-40'>
-                    <GetDeskripsiById id={3}/>
+                    <GetDeskripsiById id={3} />
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center mt-8 lg:px-40 ">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center lg:px-40 ">
                     {products.map((product, index) => (
-                        <div key={index} className="bg-white p-4 rounded-lg text-center shadow-md">
-                            <img src={product.img} alt={product.name} className="mx-auto mb-4" />
+                        <div key={index} className="bg-white p-4 text-center border border-gray-100">
+                            <img src={product.img} alt={product.name} className="mx-auto w-32 h-auto"/>
                             <h3 className="text-xl font-bold mb-2">{product.name}</h3>
                             <p className="text-gray-600 ">
                                 Dengan keahlian dalam bidangnya dan kecanggihan teknologi, Godong Laku adalah...
                             </p>
                             {product.link ? (
                                 <Link href={product.link}>
-                                    <button className="text-[#538055] font-semibold flex items-center gap-2 mx-auto">
+                                    <button className="text-[#538055] font-semibold flex items-center gap-2 mx-auto my-4">
                                         COBA SEKARANG <ArrowRight />
                                     </button>
                                 </Link>
                             ) : (
-                                <button className="text-[#538055] font-semibold flex items-center gap-2 mx-auto">
+                                <button className="text-[#538055] font-semibold flex items-center gap-2 mx-auto my-4">
                                     COBA SEKARANG <ArrowRight />
                                 </button>
                             )}
@@ -229,7 +226,7 @@ export default function Landing() {
                 </div>
 
                 <div className='flex justify-center mt-12'>
-                    <button className='bg-[#366938] text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors'>
+                    <button className='bg-[#366938] text-white px-8 py-3 rounded-sm hover:bg-green-700 transition-colors'>
                         Telusuri Semua Produk
                     </button>
                 </div>
@@ -266,17 +263,17 @@ export default function Landing() {
 
                 {/* Bagian Kanan */}
                 <div className="lg:w-1/4 pb-4 lg:pb-10 ">
-                    <h2 className="text-black text-2xl lg:text-4xl font-bold font-['Poppins']">2 Years<br/>Experience</h2>
+                    <h2 className="text-black text-2xl lg:text-4xl font-bold font-['Poppins']">2 Years<br />Experience</h2>
                     <p className=" text-justify text-black text-md lg:text-lg font-normal font-['Poppins'] mt-4">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias libero corporis a? Maiores ab quae, consequuntur tenetur fugiat deleniti soluta ducimus enim, inventore sequi excepturi eius quos consequatur facilis amet.
+                        <GetDeskripsiById id={4}/>
                     </p>
-                    <div className="px-4 py-5 mt-4 bg-[#366938] rounded-lg inline-flex">
-                        <Link href="/client/contact">
-                            <div className="flex text-center gap-2 text-white text-lg font-medium font-['Poppins'] leading-[23px] cursor-pointer">
-                                Contact US <img src="phone-fill.svg" alt="" />
-                            </div>
-                        </Link>
-                    </div>
+                        <div className="px-4 py-5 mt-4 bg-[#366938] rounded-lg inline-flex">
+                            <Link href="/client/contact">
+                                <div className="flex text-center gap-2 text-white text-lg font-medium font-['Poppins'] leading-[23px] cursor-pointer">
+                                    Contact US <img src="phone-fill.svg" alt="" />
+                                </div>
+                            </Link>
+                        </div>
                 </div>
             </div>
 
@@ -285,10 +282,10 @@ export default function Landing() {
                 {/* Header */}
                 <div className="text-center px-4">
                     <h2 className="text-black text-2xl sm:text-3xl lg:text-[50px] font-bold font-['Poppins'] leading-tight tracking-tight">
-                        Cara Register Aplikasi:
+                        <GetTitleById id={6} />
                     </h2>
                     <p className="text-[#020e35] text-md sm:text-lg font-normal mt-2 max-w-screen-md mx-auto pt-10">
-                        Silakan mengikuti panduan di bawah ini untuk dapat menggunakan aplikasi yang kami miliki.
+                        <GetDeskripsiById id={5}/>
                     </p>
                 </div>
 
@@ -314,12 +311,11 @@ export default function Landing() {
                 <Side />
             </div>
 
-
             <div className="py-16 px-8 bg-gradient-to-b from-white via-[#D4E2D2] to-white">
                 <div className=" mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-[#1A1A1A] mb-4">
-                            Berita Terbaru
+                            <GetTitleById id={8} />
                         </h2>
                         <p className="text-gray-600 mx-auto">
                             Dapatkan informasi terkini untuk mengetahui berita Anda yang menghadirkan update terbaru, berita yang viral, dan berita penting dari dunia bisnis, baik pelayanan regulasi hingga hari berbagai berita...

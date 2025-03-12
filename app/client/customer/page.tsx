@@ -37,12 +37,12 @@ export default function Customerpage() {
 
     return (
         <div>
-            <div className="container mx-auto px-4 py-12">
+            <div className="font-poppins container mx-auto px-4 py-12 my-10">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-5xl font-bold mb-2">
-                        Dipercaya oleh <span className="text-[#366938]">100 Ribu Orang</span> di Indonesia
+                        Dipercaya oleh <span className="text-[#34A45C]">100 Ribu Orang</span> di Indonesia
                     </h2>
-                    <p className="text-gray-600 text-lg md:text-2xl">
+                    <p className="text-gray-600 text-lg mt-3 md:text-xl">
                         Solusi terpercaya untuk pengelolaan bisnis yang lebih efisien
                     </p>
                 </div>

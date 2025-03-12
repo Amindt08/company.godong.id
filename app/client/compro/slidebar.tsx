@@ -7,7 +7,7 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ className, onProductClick, activeProduct }) => {
-    const [maxHeight, setMaxHeight] = useState("calc(100vh - 27rem)"); // Default tinggi sidebar
+    const [maxHeight, setMaxHeight] = useState("calc(100vh - 1rem)"); // Default tinggi sidebar
 
     useEffect(() => {
         const updateSidebarHeight = () => {
@@ -35,23 +35,36 @@ const Sidebar: React.FC<SidebarProps> = ({ className, onProductClick, activeProd
         };
     }, []);
 
-    return (
-        <div
-            id="sidebar"
-            className={`w-60 md:w-64 lg:w-72 bg-white shadow-md p-4 absolute left-0 top-16 rounded-lg transition-all duration-300 ${className}`}
-            style={{ maxHeight, overflowY: "auto" }} // Pastikan sidebar tidak melebihi batas
-        >
-            {/* Judul */}
-            <h2 className="text-lg font-bold text-gray-800">Aplikasi</h2>
+    const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
+        e.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-            {/* Daftar Produk */}
-            <ul className="mt-4 flex flex-col gap-3 text-gray-700 text-base">
+    return (
+        <div id="sidebar" className={`w-hidden lg:w-1/4 self-start bg-white border-gray-100 border-r-2 mb-8 fixed z-20 left-0  transition-all duration-300 ${className}`} style={{ maxHeight, overflowY: "auto" }}>
+            {/* <ul className="space-y-2 mt-2 flex flex-col gap-2 text-[#010200] text-base">
                 {["Godong Laku", "Godong Kasir", "Mobile Kasir", "Mobile Laku", "Godong Pharmacy"].map((product) => (
                     <li
                         key={product}
-                        className={`pl-3 py-2 cursor-pointer hover:text-green-700 ${
-                            activeProduct === product ? "text-green-700 font-semibold" : ""
+                        className={`pl-3 py-2 cursor-pointer ${
+                            activeProduct === product ? "text-green-700 font-bold" : ""
                         }`}
+                        onClick={() => onProductClick(product)}
+                    >
+                        {product}
+                    </li>
+                ))}
+            </ul> */}
+
+            <ul className=" flex flex-col gap-2 text-gray-600 font-medium">
+                {["Godong Laku", "Godong Kasir", "Mobile Kasir", "Mobile Laku", "Godong Pharmacy"].map((product) => (
+                    <li
+                        key={product}
+                        className={`pl-2 py-2 cursor-pointer text-[15px] ${activeProduct === product ? "text-gray-800 font-bold" : ""
+                            }`}
                         onClick={() => onProductClick(product)}
                     >
                         {product}
@@ -60,12 +73,12 @@ const Sidebar: React.FC<SidebarProps> = ({ className, onProductClick, activeProd
             </ul>
 
             {/* Tombol Telusuri Semua Produk */}
-            <div className="mt-6">
+            <div className="mt-2">
                 <button
-                    className="w-full bg-green-700 text-white py-2 rounded-lg text-base flex items-center justify-center hover:bg-green-800"
+                    className=" text-start p-4 bg-[#538055] py-2 text-white text-[15px] hover:bg-[#517754]"
                     onClick={() => onProductClick("Telusuri Semua Produk")}
                 >
-                    TELUSURI SEMUA PRODUK <span className="ml-2 text-lg">&gt;</span>
+                    TELUSURI SEMUA PRODUK <span className="ml-2 ">&gt;</span>
                 </button>
             </div>
         </div>

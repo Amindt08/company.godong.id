@@ -4,8 +4,8 @@ import { Input } from './ui/input'
 
 export default function Footer() {
     return (
-        <div className="bg-[#CADBBB] py-8">
-            <div className="container mx-auto px-4">
+        <div className="w-full bg-[#CADBBB] py-8">
+            <div className="container px-4">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                     <div>
                         <img src="/logoGodong.svg" alt="Godong Logo" className="h-8 mb-4" />

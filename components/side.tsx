@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import GetTitleById from "./CMS_Landing/Title/page";
+import GetDeskripsiById from "./CMS_Landing/Deskripsi/page";
 
 const testimonials = [
   {
@@ -47,10 +49,10 @@ export default function TestimonialSlider() {
         {/* Deskripsi di kiri dengan lebih banyak jarak */}
         <div className="w-full md:w-1/3 text-left md:pr-16 mb-6 md:mb-0">
           <h2 className="text-3xl font-bold text-gray-900 leading-tight">
-            Lebih dari 100+ Orang menggunakan Layanan kami
+            <GetTitleById id={7}/>
           </h2>
           <p className="text-gray-500 mt-3">
-            Menaruh kepercayaan kepada kami dan merasakan manfaatnya.
+            <GetDeskripsiById id={6}/>
           </p>
         </div>
 

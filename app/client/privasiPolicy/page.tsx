@@ -1,11 +1,11 @@
-"use client"; 
+"use client";
 import Footer from '@/components/Footer'
 import React from 'react'
 
 export default function PrivasiPolicyPage() {
     const title = "Ringkasan Kebijakan Privasi kami"
     const description = "Kebijakan ini mencakup setiap situs web Godong yang ditautkan di sini, dan semua produk serta layanan yang terdapat di situs web tersebut."
-  
+
 
     const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
         e.preventDefault();
@@ -24,10 +24,10 @@ export default function PrivasiPolicyPage() {
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="flex flex-col lg:flex-row gap-12">
-                <div className="w-full lg:w-1/3 lg:sticky top-16 self-start">
+                    <div className="w-full lg:w-1/3 lg:sticky top-16 self-start">
 
                         <div className="space-y-4">
-                             <div className="border-b pb-4">
+                            <div className="border-b pb-4">
                                 <a href="#syarat" onClick={(e) => handleSmoothScroll(e, 'syarat')} className="font-semibold text-lg hover:underline">Syarat & Ketentuan</a>
                             </div>
                             <div className="border-b pb-4">
@@ -45,7 +45,7 @@ export default function PrivasiPolicyPage() {
                         <div className="flex flex-col gap-8">
                             {/* Tambahkan judul utama */}
                             <h1 id="syarat" className="pb-10 ml-40  text-left text-2xl text-[30px] text-gray-800">SYARAT DAN KETENTUAN</h1>
-                            
+
                             <div className="space-y-6">
                                 <div className="flex items-center gap-2">
                                     <span className="font-semibold text-lg">1. Persetujuan Syarat & Ketentuan</span>
@@ -160,7 +160,7 @@ export default function PrivasiPolicyPage() {
                         <div className="flex flex-col gap-8">
                             {/* Tambahkan judul utama */}
                             <h1 id="kebijakan" className="pt-20 pb-10 ml-40 text-center text-[30px] text-gray-800">Kebijakan Izin dan API yang Mengakses Informasi Sensitif</h1>
-                            
+
                             <div className="space-y-6">
                                 <div className="flex items-center gap-2">
                                     <span className="font-semibold text-lg">1. Persetujuan Syarat & Ketentuan</span>
@@ -218,7 +218,7 @@ export default function PrivasiPolicyPage() {
                         <div className="flex flex-col gap-8">
                             {/* Tambahkan judul utama */}
                             <h1 id="izin" className="pt-20 pb-10 ml-40 text-center text-[30px] text-gray-800">Izin dan API yang Mengakses <br /> Informasi Sensitif</h1>
-                             <div className="space-y-6">
+                            <div className="space-y-6">
                                 <div className="flex items-center gap-2">
                                     <span className="font-semibold text-lg">1. Persetujuan Syarat & Ketentuan</span>
                                 </div>

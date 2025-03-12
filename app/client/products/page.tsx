@@ -55,40 +55,30 @@ const Apps: React.FC = () => {
     };
 
     return (
-        <div className="h-screen flex flex-col">
-        {/* Menu Navigasi Horizontal */}
-        <div className="fixed top-16 left-0 right-0 bg-gray-100 shadow-md flex justify-center z-10">
-            <div className="flex space-x-2 px-2 py-1 text-sm sm:text-base">
-                {["Aplikasi", "Suite", "Laku One", "Marketplace"].map((tab) => (
-                    <button
-                        key={tab}
-                        className={`py-2 px-3 sm:py-3 sm:px-5 font-semibold transition-colors duration-300 ${
-                            activeTab === tab ? "text-black border-b-2 sm:border-b-4 border-black" : "text-gray-600 hover:text-black"
-                        }`}
-                        onClick={() => handleTabChange(tab)}
-                    >
-                        {tab}
-                    </button>
-                ))}
+        <div className="max-h-[600px] overflow-y-auto absolute mt-10 bg-white border border-[#C4C4C4A3] w-[1290px] -left-[263px] ">
+            <div className="fixed top-16 pl-10 left-0 right-0 bg-gray-100  flex justify-start z-30">
+                <div className="flex space-x-2 px-2 py-1 text-[10px] md:text-[12px] font-normal lg:text-[14px]">
+                    {["Aplikasi", "Suite", "Laku One", "Marketplace"].map((tab) => (
+                        <button
+                            key={tab}
+                            className={`py-2 px-3 sm:py-3 sm:px-5 text-medium transition-colors duration-300 ${activeTab === tab ? "text-black border-b-2 sm:border-b-4 border-[#366938]" : "text-gray-600 hover:text-black"
+                                }`}
+                            onClick={() => handleTabChange(tab)}
+                        >
+                            {tab}
+                        </button>
+                    ))}
+                </div>
             </div>
-        </div>
 
-            {/* Konten Utama */}
-            <div className="flex pt-32 flex-1">
-                {/* Sidebar hanya muncul jika layar besar */}
+            <div className="flex flex-col lg:flex-row px-4 md:px-6 lg:px-8 pt-14 bg-white">
                 {activeTab === "Aplikasi" && !isSmallScreen && (
-                    <Sidebar
-                        className="w-80 h-[calc(100vh-4rem)] bg-white shadow-md fixed left-0 top-32 z-30"
-                        onProductClick={handleProductClick}
-                        activeProduct={activeProduct}
-                    />
+                    <Sidebar className="lg:sticky bg-white fixed left-0 top-20 z-30" onProductClick={handleProductClick} activeProduct={activeProduct}/>
                 )}
-
-                {/* Konten Dinamis */}
-                <main className={`flex-1 p-8 bg-white ${activeTab === "Aplikasi" && !isSmallScreen ? "ml-80" : ""}`}>
+                <div className="w-full">
+                <main className={`w-full text-start bg-white ${activeTab === "Aplikasi" && !isSmallScreen ? "ml-2" : ""}`}>
                     {activeTab === "Aplikasi" && (
                         <>
-                            {/* Jika layar kecil, tampilkan semua produk langsung */}
                             {isSmallScreen || activeProduct === "Telusuri Semua Produk" ? (
                                 <>
                                     <GodongLaku />
@@ -108,15 +98,12 @@ const Apps: React.FC = () => {
                             )}
                         </>
                     )}
+                </main>
                     {activeTab === "Suite" && <Suite />}
                     {activeTab === "Laku One" && <LakuOne />}
                     {activeTab === "Marketplace" && <Marketplace />}
-                </main>
+                </div>
             </div>
-
-            {/* Footer tetap di bawah */}
-            
-            <Footer />
         </div>
     );
 };

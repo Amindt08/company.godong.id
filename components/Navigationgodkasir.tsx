@@ -3,37 +3,39 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { ChevronDown, Ellipsis, Megaphone, Search, Menu, X } from "lucide-react";
+
 
 export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="bg-[#CADBBB] py-4 px-6 w-full h-full relative z-40">
+    <div className="font-poppins bg-[#CADBBB] mt-11 py-4 px-6 w-full h-full relative z-40">
 
       {/* Header Container */}
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="flex-shrink-0">
-          <Image src="/logoGodong.svg" width={128} height={29} alt="godong.id Logo" />
+        <div className="col-span-1 flex justify-center pt-2 ml-[145px]">
+          <Image src="/Godkasir.svg" width={115} height={16} alt="godong.id Logo" />
         </div>
 
         {/* Menu Desktop */}
-        <nav className="hidden md:flex items-center gap-6">
-          <Link href="/client/FiturGodkasir" className="text-[17px] font-normal px-3 py-2">
+        <nav className="hidden items-end justify-end md:flex gap-4 pr-48">
+          <Link href="/client/FiturGodkasir" className="text-[14px] font-normal px-3 py-2">
             Fitur
           </Link>
-          <Link href="/client/HargaGodkasir" className="text-[17px] font-normal px-3 py-2">
+          <Link href="/client/HargaGodkasir" className="text-[14px] font-normal px-3 py-2">
             Harga
           </Link>
-          <Link href="/support" className="text-[17px] font-normal px-3 py-2">
+          <Link href="/support" className="text-[14px] font-normal px-3 py-2">
             Solusi
           </Link>
         </nav>
 
-        {/* Button "Masuk" */}
+        {/* Button "Masuk"
         <div className="hidden md:block">
           <Button className="bg-[#366938] text-white px-4 py-2">Masuk</Button>
-        </div>
+        </div> */}
 
         {/* Hamburger Menu (Mobile) */}
         <div className="flex md:hidden">
@@ -49,7 +51,7 @@ export default function NavigationBar() {
       {/* Menu Mobile */}
       {isMenuOpen && (
         <nav
-        className="absolute top-[70px] left-0 w-[90%] bg-[#CADBBB] z-40 p-6 rounded-lg shadow-md flex flex-col items-start gap-4 mx-4">
+          className="absolute top-[70px] left-0 w-[90%] bg-[#CADBBB] z-40 p-6 rounded-lg shadow-md flex flex-col items-start gap-4 mx-4">
           <Link href="/client/FiturGodkasir" className="text-[17px] font-normal px-2 py-1">
             Fitur
           </Link>

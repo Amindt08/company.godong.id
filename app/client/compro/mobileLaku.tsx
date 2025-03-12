@@ -2,18 +2,12 @@ import React from 'react';
 
 const MobileLaku: React.FC = () => {
     return (
-        <div className='p-6 mb-4' id='mobile-laku'>
-            <h1 className='font-extrabold text-3xl'>Mobile Laku</h1>
-            <p className='mt-2 text-xl'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Repellendus necessitatibus ratione aliquam quas repudiandae corrupti, 
-                temporibus officia suscipit quae sed, labore incidunt doloremque ea 
-                totam perspiciatis aliquid! Quaerat, labore eaque.
-            </p>
+        <div className='p-6 mb-80' id='mobile-laku'>
+            <h1 className='font-bold text-2xl'>Mobile Laku</h1>
 
             <div className='grid grid-cols-1 md:grid-cols-1 gap-4 mt-6'>
-                <div className='bg-slate-50 p-4 shadow-sm'>
-                    <p className="mt-2 text-xl text-gray-600">
+                <div className='p-4 border border-gray-200 bg-slate-50'>
+                    <p className="t-2 text-[12px] font-light text-gray-600">
                         belum ada produk
                     </p>
                 </div>

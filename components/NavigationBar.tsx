@@ -7,9 +7,10 @@ import { ChevronDown, Ellipsis, Megaphone, Search, Menu, X } from "lucide-react"
 import axios from "axios";
 import { Button } from "./ui/button";
 import { apiEndpoints } from "@/app/api/api";
-import GetNavbarById from '@/components/Navbar/page';
-import GetTitleById from "./Title/page";
-import GetImageById from "./Image/page";
+import GetNavbarById from '@/components/CMS_Landing/Navbar/page';
+import GetImageById from "./CMS_Landing/Image/page";
+import Apps from "@/app/client/products/page";
+import PopUpProduct from "@/app/client/products/page1";
 
 
 interface ContentNavbarGeneral {
@@ -37,6 +38,7 @@ export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [ellipsisMenuOpen, setEllipsisMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownProductOpen, setDropdownProductOpen] = useState(false);
   const [dropdownPerusahaanOpen, setDropdownPerusahaanOpen] = useState(false);
   const [dropdownSelengkapnyaOpen, setDropdownSelengkapnyaOpen] = useState(false);
   const [isProductPage, setIsProductPage] = useState(false); // State untuk toggle Produk
@@ -134,7 +136,7 @@ export default function NavigationBar() {
       <header className="flex items-center justify-between px-6 py-2 bg-white text-gray-800 border-b border-gray-300 fixed  w-full z-50 transition-all duration-300">
 
         {/* Logo */}
-        <div className="flex items-center pr-10">
+        <div className="flex items-center pr-28">
           <Link href="/client/Landing">
             <Image src="/logoGodong.svg" width={128} height={29} alt="godong.id Logo" />
             {/* <GetImageById id={1} width={128} height={29}/> */}
@@ -143,12 +145,17 @@ export default function NavigationBar() {
 
         <nav className="hidden lg:flex flex-1 gap-8 ">
           {[
-            <button
-              onClick={() => { handleProductClick(); handleSetActive(0); }}
-              className={`text-[15px] font-medium ${activeIndex === 0 ? "text-[#366938]" : "text-gray-800"} hover:text-[#366938]`}
-            >
-              <GetNavbarById id={1} />
-            </button>,
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => { setDropdownProductOpen(!dropdownProductOpen); handleSetActive(0); }}
+                className={`text-[15px] font-medium ${activeIndex === 0 ? "text-[#366938]" : "text-gray-800"} hover:text-[#366938]`}
+              >
+                <GetNavbarById id={1} />
+              </button>
+              {dropdownProductOpen && (
+                <Apps/>
+              )}
+            </div>,
 
             <Link
               href="/client/customer"
@@ -161,7 +168,7 @@ export default function NavigationBar() {
 
             <div className="relative" ref={dropdownRef}>
               <button
-                onClick={() => {setDropdownOpen(!dropdownOpen); handleSetActive(2); }}
+                onClick={() => { setDropdownOpen(!dropdownOpen); handleSetActive(2); }}
                 className={`text-[15px] font-medium flex items-center gap-1 ${activeIndex === 2 ? "text-[#366938]" : "text-gray-800"} hover:text-[#366938]`}
               >
                 <GetNavbarById id={3} />
