@@ -174,7 +174,7 @@ export default function NavigationBar() {
                 <GetNavbarById id={3} />
               </button>
               {dropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 w-[200px] p-3">
+                <div className="absolute top-full z-40 left-0 mt-2 bg-white border border-gray-200 w-[200px] p-3">
                   <ul className="grid gap-3">
                     <ListItem title="Tentang Kami" href="/client/aboutUs" />
                     <ListItem title="Tim Kami" href="/client/company" />
@@ -191,7 +191,7 @@ export default function NavigationBar() {
             <div className="relative" onMouseEnter={() => setEllipsisMenuOpen(true)} onMouseLeave={() => setEllipsisMenuOpen(false)}>
               <Ellipsis className="cursor-pointer hover:text-[#366938]" height={25} width={25} />
               {ellipsisMenuOpen && (
-                <div className="absolute top-full left-1 mt-2 bg-white  border border-gray-200 w-[200px] p-3">
+                <div className="absolute top-full z-40 left-1 mt-2 bg-white  border border-gray-200 w-[200px] p-3">
                   <ul className="grid gap-3">
                     <ListItem title="Privasi Policy" href="/client/privasiPolicy" />
                     <ListItem title="FAQ" href="/client/faq" />
