@@ -162,11 +162,11 @@ export default function Landing() {
             <div className='bg-gradient-to-b from-white via-[#D4E2D2] to-white'>
                 <h2 className='text-2xl lg:text-4xl font-bold mb-8 text-center mx-4'><GetTitleById id={2} /></h2>
                 <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:px-16 text-center' style={{ scrollbarWidth: 'none' }}>
-                    <BusinessServiceCard title="Ritel Coffee Shop" description="Penjelasan" />
-                    <BusinessServiceCard title="Ritel Restoran" description="Penjelasan" />
-                    <BusinessServiceCard title="Ritel Toko Kelontong" description="Penjelasan" />
-                    <BusinessServiceCard title="Ritel Warung Lite" description="Penjelasan" />
-                    <BusinessServiceCard title="Supermarket" description="Penjelasan" />
+                    <BusinessServiceCard title="Ritel Coffee Shop" description="Penjelasan"/>
+                    <BusinessServiceCard title="Ritel Restoran" description="Penjelasan"/>
+                    <BusinessServiceCard title="Ritel Toko Kelontong" description="Penjelasan"/>
+                    <BusinessServiceCard title="Ritel Warung Lite" description="Penjelasan"/>
+                    <BusinessServiceCard title="Supermarket" description="Penjelasan"/>
                 </div>
 
                 <div className='mt-16 mx-4 text-center'>

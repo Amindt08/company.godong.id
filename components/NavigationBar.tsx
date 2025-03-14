@@ -10,7 +10,6 @@ import { apiEndpoints } from "@/app/api/api";
 import GetNavbarById from '@/components/CMS_Landing/Navbar/page';
 import GetImageById from "./CMS_Landing/Image/page";
 import Apps from "@/app/client/products/page";
-import PopUpProduct from "@/app/client/products/page1";
 
 
 interface ContentNavbarGeneral {

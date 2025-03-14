@@ -2,22 +2,32 @@ const api_url = `http://127.0.0.1:8000/api`;
 
 export const apiEndpoints = {
   allNavbar: `${api_url}/getallnavbar`,
-  allContent : `${api_url}/getallcontent`,// Tambahkan endpoint lain di sini
+  allContent : `${api_url}/getallcontent`,
 
   //Deskripsi
-  GETDESKRIPSIBYID: (id: string) => `${api_url}/getDeskripsi/${id}`, // GET data berdasarkan ID
-  GETDESKRIPSI: `${api_url}/getDeskripsi`, // GET semua data
+  GETDESKRIPSI: `${api_url}/getDeskripsi`, 
+  GETDESKRIPSIPRODUCT: `${api_url}/getDeskripsiProduct`,
+  GETDESKRIPSIMKLITE: `${api_url}/getDeskripsiMkLite`,
+
 
   //Navbar
-  GETNAVBARBYID: (id: string) => `${api_url}/getNavbar/${id}`, // GET data berdasarkan ID
-  GETNAVBAR: `${api_url}/getNavbar`, // GET semua data
+  GETNAVBAR: `${api_url}/getNavbar`, 
+
+  //Topbar
+  GETTOPBARPRODUCT: `${api_url}/getTopbarProduct`,
+
+  //Sidebar
+  GETSIDEBARPRODUCT:`${api_url}/getSidebarProduct`,
 
   //Gambar
-  GETIMAGEBYID: (id: string) => `${api_url}/getImageById/${id}`, // GET data berdasarkan ID
-  GETIMAGE: `${api_url}/getImage`, // GET semua data
+  GETIMAGE: `${api_url}/getImage`, 
+  GETIMAGEPRODUCT: `${api_url}/getImageProduct`,
+  GETIMAGEMKLITE: `${api_url}/getImageMkLite`,
 
   //Judul
-  GETTITLE: `${api_url}/getTitle`, // GET semua data
+  GETTITLE: `${api_url}/getTitle`, 
+  GETTITLEPRODUCT: `${api_url}/getTitleProduct`,
+  GETTITLEMKLITE: `${api_url}/getTitleMkLite`,
 
 };
 

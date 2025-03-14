@@ -1,11 +1,13 @@
 import React from 'react';
 import Footer from '@/components/Footer';
 import Navigation from "@/components/NavigationMobile";
+import GetTitleById from '@/components/CMS_MK_Lite_Page/Title/page';
+import GetDeskripsiById from '@/components/CMS_MK_Lite_Page/Deskripsi/page';
 
 const HargaGodongKasirMobile = () => {
     return (
         <div>
-            <div className="fixed bg-white w-full h-[75px] z-50">
+            <div className="font-poppins fixed bg-white w-full h-[75px] z-50">
                 <Navigation />
             </div>
 
@@ -13,19 +15,19 @@ const HargaGodongKasirMobile = () => {
                 <section className="bg-white py-20 text-center mt-32 sm:px-10 md:px-20 lg:px-32">
                     {/* Title */}
                     <h1 className="text-3xl md:text-5xl font-bold text-black mb-4 sm:px-6 md:px-12 lg:px-20">
-                        Nikmati Fitur Canggih dengan Harga Super Terjangkau!
+                        <GetTitleById id={25} />
                     </h1>
 
                     {/* Description */}
                     <p className="text-lg text-gray-700 mb-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque cum nihil a vero hic, ipsa, corrupti adipisci laudantium at obcaecati atque quaerat odit eveniet non sunt beatae, soluta blanditiis autem?
+                        <GetDeskripsiById id={11} />
                     </p>
                 </section>
 
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-6 sm:px-20 md:px-32 lg:px-52">
                     <img
-                        src="/gambkk.png"  
+                        src="/gambkk.png"
                         alt="Logo BKK"
                         className="w-12 h-12"
                     />
@@ -39,10 +41,10 @@ const HargaGodongKasirMobile = () => {
                     {/* Bagian Kiri */}
                     <div className="flex-1 p-6">
                         <p className="text-gray-600 mb-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Officia quidem eveniet minima, temporibus tempora soluta et 
-                            aspernatur fugiat assumenda id eum nemo eos inventore nostrum 
-                            necessitatibus fuga voluptatum voluptatibus laborum?                    
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Officia quidem eveniet minima, temporibus tempora soluta et
+                            aspernatur fugiat assumenda id eum nemo eos inventore nostrum
+                            necessitatibus fuga voluptatum voluptatibus laborum?
                         </p>
                         <div className="text-3xl font-semibold text-neutral mb-4">
                             Rp 199.000<span className="text-lg font-normal text-gray-600">/bulan</span>
@@ -77,7 +79,7 @@ const HargaGodongKasirMobile = () => {
                         {/* Gambar di Sebelah Kiri */}
                         <div className="w-full lg:w-1/2 flex justify-center relative">
                             <img
-                                src="/BKK.png"  
+                                src="/BKK.png"
                                 alt="Ilustrasi Laptop Mockup"
                                 className="relative -z-10 max-w-full"
                             />
@@ -86,31 +88,28 @@ const HargaGodongKasirMobile = () => {
                         {/* Tulisan di Sebelah Kanan */}
                         <div className="w-full lg:w-1/2 text-center pt-10 lg:pt-0 px-4 lg:px-10">
                             <h1 className="text-3xl mb-4 font-semibold">
-                                Tidak perlu membayar lebih untuk mendapatkan kualitas terbaik!
+                                <GetTitleById id={26} />
                             </h1>
                             <p className="text-gray-600">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
-                                minima illum cumque pariatur quaerat? Dignissimos, distinctio
-                                culpa laboriosam neque fugiat voluptate hic ad harum eum nemo
-                                in, voluptatem molestiae dolorem?
+                                <GetDeskripsiById id={12} />
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <div className="px-5 sm:px-10 md:px-20 lg:px-60">
-  <div className="w-full text-center pt-20 sm:pt-24 lg:pt-32">
-    <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight px-10 sm:px-20">
-      Mari bergabung dengan 100+ Koperasi lainnya
-    </h1>
-    <p className="pt-6 sm:pt-8 text-lg sm:text-xl md:text-2xl text-gray-700">
-      Uji coba gratis 14 hari. Tanpa perlu kartu kredit. Login hanya dalam hitungan detik.
-    </p>
-    <button className="bg-godongButton text-green-600 px-6 py-3 text-lg sm:text-xl font-medium rounded-md my-12 shadow-md hover:scale-105 transition-transform">
-      MULAI UJI COBA GRATIS
-    </button>
-  </div>
-</div>
+                    <div className="w-full text-center pt-20 sm:pt-24 lg:pt-32">
+                        <h1 className="text-2xl sm:text-3xl md:text-3xl font-bold leading-tight px-10 sm:px-20">
+                            <GetTitleById id={27} />
+                        </h1>
+                        <p className="pt-6 sm:pt-8 text-gray-700">
+                            <GetDeskripsiById id={28} />
+                        </p>
+                        <button className="bg-[#538055] text-white px-6 py-3 text-lg sm:text-xl font-medium rounded-md my-12 shadow-md hover:scale-105 transition-transform">
+                            MULAI UJI COBA GRATIS
+                        </button>
+                    </div>
+                </div>
 
 
                 <Footer />

@@ -63,7 +63,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className, onProductClick, activeProd
                 {["Godong Laku", "Godong Kasir", "Mobile Kasir", "Mobile Laku", "Godong Pharmacy"].map((product) => (
                     <li
                         key={product}
-                        className={`pl-2 py-2 cursor-pointer text-[15px] ${activeProduct === product ? "text-gray-800 font-bold" : ""
+                        className={`pl-2 py-2 cursor-pointer text-[14px] ${activeProduct === product ? "text-gray-800 font-bold" : ""
                             }`}
                         onClick={() => onProductClick(product)}
                     >
